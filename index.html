@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATI[UCV]Log 2026-1</title>
+    <link rel="icon" sizes="32x32" href="../icon/cropped-logonuevo-32x32.png"> 
+    <link rel="icon" sizes="192x192" href="../icon/cropped-logonuevo-192x192.png">
+    <style>
+        @import url(../css/_theme.css);
+        *{
+            list-style: none;
+            font-family: var(--primary-font);
+            margin: 0;
+            padding: 0;
+            border: none;
+            outline: none;
+        }
+        /*Navbar*/
+        header nav{
+            background-color: var(--main-color);
+            color: var(--white);
+            padding: 20px 50px;
+        }
+        header nav ul{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        header nav ul li:first-child{
+            font-size: 3em;
+            font-weight: bold;
+        }
+        header nav ul li:first-child span{
+            font-size: 0.6em;
+        }
+        /*Search Bar*/
+        .search-bar{
+            display: flex;
+        }
+        .search-bar button{
+            font-size: 1em;
+            padding: 12px 25px;
+            background-color: var(--accent-color);
+            color: white;
+            cursor: pointer;
+            border-radius: 0 15px 15px 0;
+        }
+        .search-bar input{
+            font-size: 1em;
+            padding: 12px 25px;
+            width: 300px;
+            border-radius: 15px 0 0 15px;
+        }
+        /*User Icon*/
+        .user-icon{
+            background-color: var(--accent-color);
+            padding: 5px 10px;
+            border-radius: 100%;
+        }
+        /*Users Data*/
+        .users-list{
+            background-color: var(--grey-50);
+            padding: 40px;
+            border-top: 1.5px solid var(--grey-400);
+        }
+        .users-list h2{
+            color: var(--grey-950);
+            font-size: 2em;
+            margin-bottom: 30px;
+        }
+        .users-list > div{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 50px;
+        }
+        /*User Card*/
+        .user-card{
+            background-color: var(--main-color);
+            border-radius: 20px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            margin: 10px;
+            padding-bottom: 20px;
+        }
+        .user-card h4{
+            color: var(--grey-800);
+            background-color: var(--white);
+            padding: 15px;
+            font-size: 1.4em;
+            font-weight: normal;
+        }
+        .user-card img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            object-position: top center;
+        }
+        /*Footer*/
+        footer{
+            background-color: var(--grey-50);
+            text-align: center;
+            padding: 25px;
+            color: var(--grey-200);
+            font-size: 1.2em;
+            border-top: 1.5px solid var(--grey-400);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li>ATI<span>[UCV]</span>Log</li>
+                <li>
+                    <div class="search-bar">
+                        <input type="text" name="" placeholder="Nombre...">
+                        <button>Buscar</button>
+                    </div>
+                </li>
+                <li>
+                    <div class="user-icon">
+                        <img src="icon/userIcon.svg" alt="userIcon">
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <section class="users-list">
+        <h2>
+            Semestre 2026-1
+        </h2>
+        <div>
+            <div class="user-card">
+                <img src="27531458/27531458.jpg" alt="Bryan Silva Img">
+                <h4>Bryan Silva</h4>
+            </div>
+            <div class="user-card">
+                <img src="Dummies/Dummy1.png" alt="Typho Muhdano Img">
+                <h4>Typho Muhdano</h4>
+            </div>
+            <div class="user-card">
+                <img src="Dummies/Dummy2.png" alt="Person Astandard Img">
+                <h4>Person Astandard</h4>
+            </div>
+            <div class="user-card">
+                <img src="Dummies/Dummy3.png" alt="Noex Histo Img">
+                <h4>Noex Histo</h4>
+            </div>
+            <div class="user-card">
+                <img src="Dummies/Dummy4.png" alt="Car Harara Img">
+                <h4>Car Harara</h4>
+            </div>
+            <div class="user-card">
+                <img src="Dummies/Dummy5.png" alt="Lucas Img">
+                <h4>Lucas</h4>
+            </div>
+        </div>
+    </section>
+    <footer>
+        Copyright © 2026 Escuela de computación - ATI. 
+        Todos los derechos reservados
+    </footer>
+</body>
+</html>
