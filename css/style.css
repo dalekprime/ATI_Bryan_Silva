@@ -69,6 +69,16 @@ header nav ul li:first-child a span{
     gap: 50px;
 }
 /*User Card*/
+@keyframes resaltarTarjeta {
+    0% {
+        transform: scale(1) rotate(0deg);
+        background-color: var(--main-color);
+    }
+    100% {
+        transform: scale(1.05) rotate(3deg); 
+        background-color: var(--accent-color);
+    }
+}
 .user-card{
     background-color: var(--main-color);
     border-radius: 20px;
@@ -77,6 +87,9 @@ header nav ul li:first-child a span{
     flex-direction: column;
     margin: 10px;
     padding-bottom: 20px;
+}
+.user-card:hover{
+    animation: resaltarTarjeta 0.3s forwards;
 }
 .user-card h4{
     color: var(--grey-800);
