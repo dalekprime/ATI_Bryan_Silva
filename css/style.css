@@ -105,7 +105,7 @@ header nav ul li:first-child a span{
     object-position: top center;
 }
 /*Footer*/
-.footer{
+footer{
     background-color: var(--grey-50);
     text-align: center;
     padding: 25px;
@@ -150,6 +150,8 @@ header nav ul li:first-child a span{
 }
 .profile-card p{
     margin-bottom: 30px;
+    font-style: italic;
+    font-family: var(--condensed-font);
 }
 .profile-data div{
     display: grid;
@@ -160,12 +162,14 @@ header nav ul li:first-child a span{
 .profile-data div span:nth-last-child(-n+2){
     font-weight: bold;
 }
-.profile-data footer{
+.profile-data .footer{
+    display: flex;
+    flex-direction: column;
     margin-bottom: 30px;
 }
-.profile-data footer a{
+.profile-data .footer a{
     color: var(--main-color);
 }
-.profile-data footer a:hover{
+.profile-data .footer a:hover{
     color: var(--accent-color);
 }
