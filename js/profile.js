@@ -1,4 +1,19 @@
-(function language(configData){
+//Global data Management
+const urlParams = new URLSearchParams(window.location.search)
+const ciURl = urlParams.get("ci")
+let langURl = urlParams.get("lang")
+langURl = langURl? langURl: "ES";
+
+(function loadLang(lang){
+    const script = document.createElement("script")
+    script.src = `./conf/config${lang}.json`
+    script.onload = function() {
+        language(config)
+    }
+    document.body.appendChild(script)
+})(langURl)
+
+function language(configData){
     //Limpieza de Datos
     const cleanData = { 
         ...configData, 
@@ -32,18 +47,17 @@
             node.innerText = finalDataValue
         }
     })
-})(config);
+};
 
-(function loadData(paramsURL){
-    const ci = paramsURL.get("ci")
+(function loadData(ciParam){
     const script = document.createElement("script")
-    script.src = `./${ci}/profile.json`
+    script.src = `./${ciParam}/profile.json`
     script.onload = function() {
     if(profile){
         profileData(profile)
     }}
     document.body.appendChild(script)
-})(new URLSearchParams(window.location.search))
+})(ciURl)
 
 function profileData(profileInfoList){
     const profileCard = document.getElementById("profileCard")

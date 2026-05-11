@@ -1,4 +1,19 @@
-(function language(configData){
+//Global data Management
+const urlParams = new URLSearchParams(window.location.search)
+const ciURl = urlParams.get("ci")
+let langURl = urlParams.get("lang")
+langURl = langURl? langURl: "ES";
+
+(function loadLang(lang){
+    const script = document.createElement("script")
+    script.src = `./conf/config${lang}.json`
+    script.onload = function() {
+        language(config)
+    }
+    document.body.appendChild(script)
+})(langURl)
+
+function language(configData){
     //Limpieza de Datos
     const cleanData = { 
         ...configData, 
@@ -25,14 +40,14 @@
     attris.forEach(node => {
         const key = node.dataset.key
         const dataValue = cleanData[key]
-        const finalDataValue = Array.isArray(dataValue)? dataValue[0]: dataValue
+        const finalDataValue = Array.isArray(dataValue)? dataValue[0]: dataValue;
         if(node.parentNode.id === "attris" || key === "email"){
             node.innerText = `${finalDataValue}:`
         }else{
             node.innerText = finalDataValue
         }
     })
-})(config);
+};
 
 (function users(profileList){
     const userList = document.getElementById("userList")
