@@ -35,4 +35,22 @@
             node.innerText = finalDataValue
         }
     })
-})(config)
+})(config);
+
+(function users(profileList){
+    const userList = document.getElementById("userList")
+    const fragment = document.createDocumentFragment()
+    profileList.forEach(profile => {
+        const card = document.createElement("div");
+        card.className = "user-card";
+        card.innerHTML = 
+            `<img class="img-big" src="${profile.ci}/${profile.ci}Big${profile.image_ext}">
+            <img class="img-small" src="${profile.ci}/${profile.ci}Small${profile.image_ext}">
+            <h4>${profile.name}</h4>`
+        card.addEventListener("click", () => {
+            window.location.href = `profile.html?ci=${profile.ci}`;
+        });
+        fragment.appendChild(card);
+    });
+    userList.appendChild(fragment);
+})(profiles);
