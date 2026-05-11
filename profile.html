@@ -8,7 +8,7 @@
     <link rel="icon" sizes="192x192" href="../icon/cropped-logonuevo-192x192.png">
     <link rel="stylesheet" href="../css/style.css">
     <script type = "text/javascript" src="conf/configES.json" defer></script>
-    <script type = "text/javascript" src="js/index.js" defer></script>
+    <script type = "text/javascript" src="js/profile.js" defer></script>
 </head>
 <body>
     <header>
@@ -39,24 +39,25 @@
         </nav>
     </header>
     <section class="profile-card" id="profileCard">
-        <div class="profile-img"></div>
+        <div class="profile-img" id="profile-img"></div>
         <div class="profile-data">
-            <h2></h2>
-            <p></p>
+            <h2 data-profile="name"></h2>
+            <p data-profile="description"></p>
             <div id="attris">
                 <span data-key="color"></span>
-                <span></span>
+                <span data-profile="color"></span>
                 <span data-key="book"></span>
-                <span></span>
+                <span data-profile="book"></span>
                 <span data-key="music"></span>
-                <span></span>
+                <span data-profile="music"></span>
                 <span data-key="video_game"></span>
-                <span></span>
+                <span data-profile="video_game"></span>
                 <span data-key="language"></span>
-                <span></span>
+                <span data-profile="language"></span>
             </div>
-            <div class="footer" data-key="email">
-                <a href="#"></a>
+            <div class="footer" >
+                <span data-key="email"></span>
+                <a href="#" data-profile="email"></a>
             </div>
         </div>
     </section>

@@ -170,7 +170,7 @@ footer{
     gap: 0.5rem 1.5rem;
     margin-bottom: 2rem;
 }
-.profile-data div span:nth-last-child(-n+2){
+.profile-data div:first-of-type > span:nth-last-child(-n+2) {
     font-weight: bold;
 }
 .profile-data .footer{
