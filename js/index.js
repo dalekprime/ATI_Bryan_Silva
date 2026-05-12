@@ -18,11 +18,11 @@ const searchURL = urlParams.get("search");
 })(langURl);
 
 (function mobileMenu() {
-    const menuIcon = document.querySelector(".menu-icon");
-    const navBarList = document.getElementById("navBarList");
+    const menuIcon = document.querySelector(".menu-icon")
+    const navBarList = document.getElementById("navBarList")
     menuIcon.addEventListener("click", () => {
-        navBarList.classList.toggle("menu-active");
-    });
+        navBarList.classList.toggle("menu-active")
+    })
 })();
 
 function language(configData){
