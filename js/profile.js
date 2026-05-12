@@ -9,6 +9,9 @@ langURl = langURl? langURl: "ES";
     script.src = `./conf/config${lang}.json`
     script.onload = function() {
         language(config)
+        if(ciURl){
+            loadData(ciURl)
+        }
     }
     document.body.appendChild(script)
 })(langURl)
@@ -18,7 +21,7 @@ function language(configData){
     const cleanData = { 
         ...configData, 
         email: configData.email ? configData.email.slice(0, -8) : "" 
-    };
+    }
     //NavBar
     const navBarList = document.getElementById("navBarList")
     if(navBarList){
@@ -40,7 +43,7 @@ function language(configData){
     attris.forEach(node => {
         const key = node.dataset.key
         const dataValue = cleanData[key]
-        const finalDataValue = Array.isArray(dataValue)? dataValue[0]: dataValue;
+        const finalDataValue = Array.isArray(dataValue)? dataValue[0]: dataValue
         if(node.parentNode.id === "attris" || key === "email"){
             node.innerText = `${finalDataValue}:`
         }else{
@@ -49,7 +52,7 @@ function language(configData){
     })
 };
 
-(function loadData(ciParam){
+function loadData(ciParam){
     const script = document.createElement("script")
     script.src = `./${ciParam}/profile.json`
     script.onload = function() {
@@ -57,7 +60,7 @@ function language(configData){
         profileData(profile)
     }}
     document.body.appendChild(script)
-})(ciURl)
+}
 
 function profileData(profileInfoList){
     const profileCard = document.getElementById("profileCard")
@@ -76,3 +79,20 @@ function profileData(profileInfoList){
             `<img class="img-big" src="${profileInfoList.ci}/${profileInfoList.ci}Big${profileInfoList.image_ext}">
             <img class="img-small" src="${profileInfoList.ci}/${profileInfoList.ci}Small${profileInfoList.image_ext}">`
 };
+
+//Search Redirect
+(function externalSearch(){
+    const searchBarFrame = document.getElementById("searchBar")
+    const searchBarInput = searchBarFrame.querySelector("input")
+    const searchBarButton = searchBarFrame.querySelector("button")
+    function redirect() {
+        const value = searchBarInput.value.trim()
+        if(value){
+            window.location.href = `index.html?search=${encodeURIComponent(value)}`
+        }
+    }
+    searchBarButton.addEventListener("click", redirect)
+    searchBarInput.addEventListener("keyup", (e) => {
+        if (e.key === "Enter") redirect()
+    })
+})();

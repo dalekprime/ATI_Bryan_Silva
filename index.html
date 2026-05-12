@@ -20,7 +20,7 @@
                     </a>
                 </li>
                 <li>
-                    <div class="search-bar">
+                    <div class="search-bar" id="searchBar">
                         <input type="text">
                         <button></button>
                     </div>
@@ -41,7 +41,11 @@
     <section class="users-list">
         <h2 data-key="semester"></h2>
         <div id="userList"></div>
+        <div id="searchFail" class="hidden">
+            <span data-key="emptySearch"></span>
+            <span id="searchFailResult"></span>
+        </div>
     </section>
-    <footer id="footer"></footer>
+    <footer data-key="copyRight"></footer>
 </body>
 </html>
