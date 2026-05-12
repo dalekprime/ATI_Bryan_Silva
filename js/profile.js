@@ -14,7 +14,15 @@ langURl = langURl? langURl: "ES";
         }
     }
     document.body.appendChild(script)
-})(langURl)
+})(langURl);
+
+(function mobileMenu() {
+    const menuIcon = document.querySelector(".menu-icon");
+    const navBarList = document.getElementById("navBarList");
+    menuIcon.addEventListener("click", () => {
+        navBarList.classList.toggle("menu-active");
+    });
+})();
 
 function language(configData){
     //Limpieza de Datos
@@ -34,7 +42,7 @@ function language(configData){
             }
         })
         //Barra de Busqueda
-        const searchButton = navBarList.querySelector("li:nth-child(2) div")
+        const searchButton = navBarList.querySelector("li:nth-child(3) div")
         searchButton.children[0].setAttribute("placeholder", `${cleanData.name}...`)
         searchButton.children[1].innerText = cleanData.search
     }

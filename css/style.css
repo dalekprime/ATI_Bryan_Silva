@@ -30,7 +30,7 @@ header nav ul li:first-child a{
 header nav ul li:first-child a span{
     font-size: 1rem;
 }
-header nav ul li:last-child{
+.menu-icon-li{
     display: none;
 }
 /*Search Bar*/
@@ -84,7 +84,7 @@ footer{
     grid-template-columns: 1fr 1fr 1fr;
     gap: 3rem;
 }
-.users-list div:last-child{
+.users-list > div:last-child{
     justify-self: center;
     color: var(--accent-color);
 }
@@ -95,12 +95,12 @@ footer{
     display: none;
 }
 /*User Card*/
-@keyframes resaltarTarjeta {
-    0% {
+@keyframes resaltarTarjeta{
+    0%{
         transform: scale(1) rotate(0deg);
         background-color: var(--main-color);
     }
-    100% {
+    100%{
         transform: scale(1.05) rotate(3deg); 
         background-color: var(--accent-color);
     }
@@ -124,7 +124,7 @@ footer{
     font-size: 1.4rem;
     font-weight: normal;
 }
-.user-card img {
+.user-card img{
     width: 100%;
     aspect-ratio: 1 / 1;
     object-fit: cover;
@@ -155,7 +155,7 @@ footer{
     object-fit: cover;
     border-radius: 0 0 20% 0;
 }
-.profile-img .img-small {
+.profile-img .img-small{
     display: none; 
 }
 /*Data*/
@@ -179,7 +179,7 @@ footer{
     gap: 0.5rem 1.5rem;
     margin-bottom: 2rem;
 }
-.profile-data div:first-of-type > span:nth-last-child(-n+2) {
+.profile-data div:first-of-type > span:nth-last-child(-n+2){
     font-weight: bold;
 }
 .profile-data .footer{
@@ -196,11 +196,11 @@ footer{
 
 /*Dispositivos móviles*/
 @media (min-width: 320px) and (max-width: 480px){
-    .users-list > div, .profile-data div{
+    .users-list > div:first-of-type, .profile-data div{
         grid-template-columns: 1fr 1fr;
         gap: 0.5rem;
     }
-    .profile-card {
+    .profile-card{
         flex-direction: column;
     }
     .profile-img{
@@ -210,16 +210,50 @@ footer{
     .profile-img img{
         width: 100%;
     }
-    header nav ul li{
-        display: none;
+    header nav ul{
+        display: grid;
+        grid-template-columns: 1fr max-content; 
+        row-gap: 1rem;
+        align-items: center;
     }
-    header nav ul li:last-child, header nav ul li:first-child{
+    header nav ul li:nth-child(1){
+        grid-column: 1 / 2;
+    }
+    .menu-icon-li{
+        grid-column: 2 / 3;
         display: block;
     }
-    .profile-img .img-big {
+    header nav ul li:nth-child(3){
+        grid-column: 1 / 3; 
+        border-top: 1px solid var(--white);
+        border-bottom: 1px solid var(--white);
+        padding: 1rem 0;
+        display: none;
+    }
+    .search-bar{
+        width: 100%;
+    }
+    .search-bar input{
+        width: 100%; 
+    }
+    header nav ul li:nth-child(4){
+        grid-column: 1 / 3;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 1rem;
+        display: none;
+    }
+    header nav ul.menu-active li:nth-child(3){
+        display: block; 
+    }
+    header nav ul.menu-active li:nth-child(4){
+        display: flex; 
+    }
+    .profile-img .img-big{
         display: none; 
     }
-    .profile-img .img-small {
+    .profile-img .img-small{
         display: block; 
     }
     .user-card .img-big{
@@ -234,17 +268,17 @@ footer{
 }
 /*iPads, tablets*/
 @media (min-width: 481px) and (max-width: 768px){
-    .users-list > div {
+    .users-list > div{
         grid-template-columns: 1fr 1fr;
         gap: 1.5rem;
     }
     nav ul li:first-child a{
         font-size: 2rem;
     }
-    .search-bar input {
+    .search-bar input{
         width: 10rem;
     }
-    .profile-card {
+    .profile-card{
         flex-direction: column;
     }
     .profile-img{
@@ -254,10 +288,10 @@ footer{
     .profile-img img{
         width: 100%;
     }
-    .profile-img .img-big {
+    .profile-img .img-big{
         display: none; 
     }
-    .profile-img .img-small {
+    .profile-img .img-small{
         display: block; 
     }
     .user-card .img-big{
@@ -269,19 +303,19 @@ footer{
 }
 /*Pantallas pequeñas, Ordenadores portátiles*/
 @media (min-width: 769px) and (max-width: 1024px){
-    .users-list > div {
+    .users-list > div{
         gap: 1.5rem;
     }
-    .search-bar input {
+    .search-bar input{
         width: 15rem;
     }
 }
 /*Pantallas grandes, Ordenadores de escritorios */
 @media (min-width: 1024px) and (max-width: 1200px){
-    .users-list, header nav, footer, .profile-card {
+    .users-list, header nav, footer, .profile-card{
         max-width: 1200px;
     }
-    .profile-card {
+    .profile-card{
         margin-top: 2rem;
     }
 }
