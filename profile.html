@@ -3,12 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ATI[UCV]Log 2026-1</title>
+    <title>Bryan Silva</title>
     <link rel="icon" sizes="32x32" href="../icon/cropped-logonuevo-32x32.png"> 
     <link rel="icon" sizes="192x192" href="../icon/cropped-logonuevo-192x192.png">
-    <link rel="stylesheet" href="css/style.css">
-    <script type = "text/javascript" src="data/index.json" defer></script>
-    <script type = "text/javascript" src="js/index.js" defer></script>
+    <link rel="stylesheet" href="../css/style.css">
+    <script type = "text/javascript" src="js/profile.js" defer></script>
 </head>
 <body>
     <header>
@@ -38,12 +37,27 @@
             </ul>
         </nav>
     </header>
-    <section class="users-list">
-        <h2 data-key="semester"></h2>
-        <div id="userList"></div>
-        <div id="searchFail" class="hidden">
-            <span data-key="emptySearch"></span>
-            <span id="searchFailResult"></span>
+    <section class="profile-card" id="profileCard">
+        <div class="profile-img" id="profile-img"></div>
+        <div class="profile-data">
+            <h2 data-profile="name"></h2>
+            <p data-profile="description"></p>
+            <div id="attris">
+                <span data-key="color"></span>
+                <span data-profile="color"></span>
+                <span data-key="book"></span>
+                <span data-profile="book"></span>
+                <span data-key="music"></span>
+                <span data-profile="music"></span>
+                <span data-key="video_game"></span>
+                <span data-profile="video_game"></span>
+                <span data-key="language"></span>
+                <span data-profile="language"></span>
+            </div>
+            <div class="footer" >
+                <span data-key="email"></span>
+                <a href="#" data-profile="email"></a>
+            </div>
         </div>
     </section>
     <footer data-key="copyRight"></footer>
