@@ -1,4 +1,5 @@
 //Global data Management
+console.log("Global:", this);
 const urlParams = new URLSearchParams(window.location.search)
 const ciURl = urlParams.get("ci")
 let langURl = urlParams.get("lang")
@@ -71,6 +72,7 @@ function loadData(ciParam){
 }
 
 function profileData(profileInfoList){
+    console.log("Función:", this);
     const profileCard = document.getElementById("profileCard")
     const profileInfo = profileCard.querySelectorAll("[data-profile]")
     profileInfo.forEach(prop => {
@@ -101,6 +103,7 @@ function profileData(profileInfoList){
     }
     searchBarButton.addEventListener("click", redirect)
     searchBarInput.addEventListener("keyup", (e) => {
+        console.log("Evento:", this);
         if (e.key === "Enter") redirect()
     })
 })();
