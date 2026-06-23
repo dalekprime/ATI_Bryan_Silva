@@ -1,8 +1,8 @@
 #Ultima version de Ubuntu en 06/11/26
 FROM ubuntu/apache2:latest
 LABEL maintainer="Bryan Silva"
-#Instalar Python
-RUN apt-get update && apt-get install -y python3 libapache2-mod-wsgi-py3
+#Instalar Python y Git
+RUN apt-get update && apt-get install -y python3 libapache2-mod-wsgi-py3 git
 # Configurar Apache para mapear el script y servir estáticos
 RUN echo '<VirtualHost *:80>\n\
     DocumentRoot /var/www/html\n\
@@ -14,8 +14,7 @@ RUN echo '<VirtualHost *:80>\n\
     </Directory>\n\
 </VirtualHost>' > /etc/apache2/sites-available/000-default.conf
 RUN rm -f /var/www/html/index.html
-#Copiar archivos del directorio actual
-RUN mkdir -p /var/www/html/ATI
-COPY . /var/www/html/ATI
+#Clonar el repositorio desde GitHub en la rama main
+RUN git clone -b main https://github.com/dalekprime/ATI_Bryan_Silva.git /var/www/html/ATI
 #Abrir Puerto 80
 EXPOSE 80
